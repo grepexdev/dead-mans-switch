@@ -2,8 +2,13 @@ package main
 
 import (
 	"log"
+	"log/slog"
 	"net/http"
 )
+
+type application struct {
+	logger *slog.Logger
+}
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello world"))
